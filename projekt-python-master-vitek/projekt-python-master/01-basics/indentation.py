@@ -54,7 +54,7 @@ def check_even_numbers(limit):
     Tato funkce vypíše všechna sudá čísla od 0 do zadané hodnoty 'limit'.
     Pokud je číslo sudé, vypíše jej, jinak pokračuje v cyklu.
     """
-    for i in range(limit + 1):
+for i in range(limit + 1):
         if i % 2 == 0:
             print(f"{i} je sudé číslo.")
         else:
