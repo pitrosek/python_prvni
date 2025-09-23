@@ -49,15 +49,21 @@ Vytvořte libovolně pojmenovanou vlastní funkci s minimálně jedním parametr
 aspoň jednu podmínku if a funkci print(). Dodržte správné odsazování kódu a opatřete funkci stručnou dokumentací.
 Do konzole vypište nejprve docstring vaší funkce a potom zavolejte funkci samotnou.   
 """
-def pozdrav(jmeno):
+def check_even_numbers(limit):
     """
-    .
+    Tato funkce vypíše všechna sudá čísla od 0 do zadané hodnoty 'limit'.
+    Pokud je číslo sudé, vypíše jej, jinak pokračuje v cyklu.
     """
-    for i in range(1):
-        if jmeno:
-            print("Ahoj, " + jmeno + "!")
+    for i in range(limit + 1):
+        if i % 2 == 0:
+            print(f"{i} je sudé číslo.")
+        else:
+            continue
 
-print(pozdrav.__doc__)
-pozdrav("Hilda")
+print(check_even_numbers.__doc__)
+
+
+check_even_numbers(10)
+
 
 
