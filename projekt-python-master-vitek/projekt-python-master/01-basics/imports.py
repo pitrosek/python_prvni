@@ -75,3 +75,24 @@ Použijte vhodné moduly v Pythonu (včetně jejich případné instalace) k tom
 K řešení prvního úkolu je možné doporučit importovat interní modul datetime
 Řešení dalších dvou úkolů můžete odvodit z příkladů v dokumentaci k externímu modulu dateutil - viz https://pypi.org/project/python-dateutil/
 """
+#1
+import datetime
+import dateutil
+from dateutil.easter import easter
+from dateutil.parser import *
+from dateutil.rrule import *
+
+
+x = datetime.datetime.now()
+
+print(x.year)
+print(x.strftime("%x %X"))
+
+#2
+
+for i in range(1,6): #
+    print("Velikonoce : ", easter(x.year + i, 1))
+    
+#3
+year = rrule(YEARLY,dtstart=x,bymonth=12,bymonthday=24,byweekday=SU)[0].year
+print("Nejblizi rok kdy bude Stedry den v nedeli: %s" % year)
