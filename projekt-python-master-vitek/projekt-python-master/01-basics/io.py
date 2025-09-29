@@ -98,3 +98,29 @@ využijete na maximum možností výstupů do konzole. Může to být vtipný do
 z matematiky...), průvodce fiktivní instalací atd. Fantazii se meze nekladou a vtipnější vyhrává :-)
 Aplikaci uložte do samostatného souboru myapp.py.     
 """
+print("Jednoduchy kviz")
+
+spravne = 0
+
+odpoved = input("Kolik je 5 + 3? ")
+if odpoved == "8":
+    print("To je dobre")
+    spravne += 1
+else:
+    print("Spatne, odpoveď je 8.")
+
+odpoved = input("Jake je hl. mesto ČR? ")
+if odpoved.lower() == "praha":
+    print("Správně!")
+    spravne += 1
+else:
+    print("Spatne, odpoveď je Praha.")
+
+odpoved = input("Kolik mesicu ma rok? ")
+if odpoved == "12":
+    print("Správně!")
+    spravne += 1
+else:
+    print("Spatne, odpoveď je 12.")
+
+print("Tvuj vysledek je", spravne, "z 3.")
