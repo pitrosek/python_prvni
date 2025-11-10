@@ -160,12 +160,6 @@ funkční kód, tím lepší).
 '''
 
 
-# string_tasks.py
-"""
-Úkoly na procvičení práce s řetězci v Pythonu.
-Autor: (doplň své jméno)
-"""
-
 import random
 import string
 
