@@ -158,3 +158,57 @@ funkční kód, tím lepší).
 3. Vytvořte funkci, která vygeneruje náhodná hesla pro počet osob zadaný v parametru tak, aby heslo začínalo
    3 velkými písmeny, pokračovalo 3 malými písmeny, jedním speciálním znakem (-/+*) a končilo 3 náhodnými číslicemi.
 '''
+
+
+# string_tasks.py
+"""
+Úkoly na procvičení práce s řetězci v Pythonu.
+Autor: (doplň své jméno)
+"""
+
+import random
+import string
+
+
+def datum_do_db(datum):
+  
+    d, m, r = datum.replace(" ", "").split(".")[:3]
+    return f"{r}-{m.zfill(2)}-{d.zfill(2)}"
+
+
+def vytvor_identifikator(text, styl="python"):
+
+    slova = text.lower().split()
+    
+    if styl == "python":
+        return "_".join(slova)
+    elif styl == "camel":
+        return slova[0] + "".join(slovo.capitalize() for slovo in slova[1:])
+    else:
+        return text 
+
+
+
+def generuj_hesla(pocet):
+   
+    znaky = "-+*"
+    hesla = []
+
+    for _ in range(pocet):
+        velka = "".join(random.choices(string.ascii_uppercase, k=3))
+        mala = "".join(random.choices(string.ascii_lowercase, k=3))
+        special = random.choice(znaky)
+        cisla = "".join(random.choices(string.digits, k=3))
+        heslo = velka + mala + special + cisla
+        hesla.append(heslo)
+
+    return hesla
+
+
+
+if __name__ == "__main__":
+    print("Převod data:", datum_do_db("12. 10. 2020"))
+    print("Python identifikátor:", vytvor_identifikator("To je proměnná v Pythonu"))
+    print("Camel identifikátor:", vytvor_identifikator("To je proměnná v Pythonu", "camel"))
+    print("Náhodná hesla:", generuj_hesla(3))
+
